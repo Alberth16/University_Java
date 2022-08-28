@@ -26,7 +26,8 @@ public class Menu implements IMenu {
                 case 2 -> System.out.println("*** Update Student ***");
                 case 3 -> System.out.println("*** Search Student ***");
                 case 4 -> System.out.println("*** Display Students ***");
-                case 5 -> System.out.println("Exit program");
+                case 5 -> System.out.println("*** Add Score ***");
+                case 6 -> System.out.println("Exit program");
                 default -> System.out.println("\nInvalid input\n");
             }
         } while (option != 6);
