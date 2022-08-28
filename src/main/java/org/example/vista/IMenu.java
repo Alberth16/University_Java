@@ -1,4 +1,4 @@
 package org.example.vista;
 
-public interface Menu {
+public interface IMenu {
 }
