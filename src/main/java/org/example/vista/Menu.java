@@ -16,7 +16,8 @@ public class Menu implements IMenu {
             System.out.println("2: Update Student");
             System.out.println("3: Search Student");
             System.out.println("4: Display Students");
-            System.out.println("5: Exit program");
+            System.out.println("5: Add Score");
+            System.out.println("6: Exit program");
             System.out.print("Enter your selection : ");
             option = scanner.nextInt();
 
@@ -28,7 +29,7 @@ public class Menu implements IMenu {
                 case 5 -> System.out.println("Exit program");
                 default -> System.out.println("\nInvalid input\n");
             }
-        } while (option != 5);
+        } while (option != 6);
 
 
     }
