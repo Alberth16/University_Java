@@ -1,27 +1,39 @@
 package org.example.model;
 
+import java.util.List;
+
 public class Student {
-    private int idStudent;
+    private int studentId;
     private String name;
     private String lastName;
     private String emailAddress;
+    private List<Subject> subjects;
     public Student() {
 
     }
 
-    public Student(int idStudent, String name, String lastName, String emailAddress) {
-        this.idStudent = idStudent;
+    public Student(int studentId, String name, String lastName, String emailAddress, List<Subject> subjects) {
+        this.studentId = studentId;
         this.name = name;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
+        this.subjects = subjects;
     }
 
-    public int getIdStudent() {
-        return idStudent;
+    public List<Subject> getSubjects() {
+        return subjects;
     }
 
-    public void setIdStudent(int idStudent) {
-        this.idStudent = idStudent;
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int idStudent) {
+        this.studentId = idStudent;
     }
 
     public String getName() {
