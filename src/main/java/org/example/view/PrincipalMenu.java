@@ -7,10 +7,10 @@ public class PrincipalMenu implements IMenu {
     @Override
     public void showMenu() {
             System.out.println("MENU \n---------------------");
-            System.out.println("1: Add Student");
-            System.out.println("2: Update Student");
-            System.out.println("3: Search Student");
-            System.out.println("4: Display Students");
+            System.out.println("1: Manage Student");
+            System.out.println("2: Update ");
+            System.out.println("3: Search ");
+            System.out.println("4: Display ");
             System.out.println("5: Add Score");
             System.out.println("6: Exit program");
             System.out.print("Enter your selection : ");
@@ -22,7 +22,7 @@ public class PrincipalMenu implements IMenu {
 
         switch (optionSelected) {
             case "1" -> {
-                        dynamicOption = new DynamicSubMenu(new SubMenuStudent());
+                        dynamicOption = new DynamicSubMenu(new StudentSubMenu());
                         dynamicOption.getStrategy();
                         }
             case "2" -> System.out.println("*** Update Student ***");

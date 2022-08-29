@@ -6,5 +6,5 @@ import java.sql.Connection;
  * In this case it just used for MySql connection
  */
 public interface IDBConnection {
-    public Connection connect();
+     Connection connect();
 }
