@@ -7,7 +7,7 @@ public class DbConnection {
        String databseUserName = "bda277cda2e5bb";
        String databasePassword = "285c4a40";
 
-       Connection con = null;
+       Connection con;
        try {
            con = DriverManager.getConnection(MySQLURL, databseUserName, databasePassword);
            if (con != null) {
