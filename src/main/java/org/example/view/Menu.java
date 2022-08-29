@@ -6,7 +6,7 @@ public class Menu implements IMenu {
     @Override
     public void menu() {
         Scanner scanner = new Scanner(System.in);
-        Integer option = 0;
+        String option = "";
 
         do {
             System.out.println("MENU \n---------------------");
@@ -17,18 +17,18 @@ public class Menu implements IMenu {
             System.out.println("5: Add Score");
             System.out.println("6: Exit program");
             System.out.print("Enter your selection : ");
-            option = scanner.nextInt();
+            option = scanner.next();
 
             switch (option) {
-                case 1 -> System.out.println("*** Add Students ***");
-                case 2 -> System.out.println("*** Update Student ***");
-                case 3 -> System.out.println("*** Search Student ***");
-                case 4 -> System.out.println("*** Display Students ***");
-                case 5 -> System.out.println("*** Add Score ***");
-                case 6 -> System.out.println("Exit program");
+                case "1" -> System.out.println("*** Add Students ***");
+                case "2" -> System.out.println("*** Update Student ***");
+                case "3" -> System.out.println("*** Search Student ***");
+                case "4" -> System.out.println("*** Display Students ***");
+                case "5" -> System.out.println("*** Add Score ***");
+                case "6" -> System.out.println("Exit program");
                 default -> System.out.println("\nInvalid input\n");
             }
-        } while (option != 6);
+        } while (!option.equals("6"));
 
 
     }
