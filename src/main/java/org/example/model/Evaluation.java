@@ -1,28 +1,29 @@
 package org.example.model;
-
 import java.util.Date;
 
 public class Evaluation {
-    private int idEvaluation;
+    private int evaluationId;
     private double score;
-    private Date timeStamp;
+    private Date date;
+    private Subject subject;
 
-    public Evaluation(int idEvaluation, double score, Date timeStamp) {
-        this.idEvaluation = idEvaluation;
-        this.score = score;
-        this.timeStamp = timeStamp;
-    }
 
     public Evaluation(){
-
     }
 
-    public int getIdEvaluation() {
-        return idEvaluation;
+    public Evaluation(int evaluationId, double score, Date date, Subject subject) {
+        this.evaluationId = evaluationId;
+        this.score = score;
+        this.date = date;
+        this.subject = subject;
     }
 
-    public void setIdEvaluation(int idEvaluation) {
-        this.idEvaluation = idEvaluation;
+    public int getEvaluationId() {
+        return evaluationId;
+    }
+
+    public void setEvaluationId(int idEvaluation) {
+        this.evaluationId = idEvaluation;
     }
 
     public double getScore() {
@@ -33,11 +34,19 @@ public class Evaluation {
         this.score = score;
     }
 
-    public Date getTimeStamp() {
-        return timeStamp;
+    public Date getDate() {
+        return date;
     }
 
-    public void setTimeStamp(Date timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }
