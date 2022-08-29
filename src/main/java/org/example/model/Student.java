@@ -1,17 +1,27 @@
 package org.example.model;
 
 public class Student {
+    private int idStudent;
     private String name;
     private String lastName;
     private String emailAddress;
-
-    public Student(){
+    public Student() {
 
     }
-    public Student(String name, String lastName, String emailAddress) {
+
+    public Student(int idStudent, String name, String lastName, String emailAddress) {
+        this.idStudent = idStudent;
         this.name = name;
         this.lastName = lastName;
         this.emailAddress = emailAddress;
+    }
+
+    public int getIdStudent() {
+        return idStudent;
+    }
+
+    public void setIdStudent(int idStudent) {
+        this.idStudent = idStudent;
     }
 
     public String getName() {
