@@ -1,7 +1,5 @@
-package org.example.vista;
+package org.example.view;
 
-import java.io.IOError;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu implements IMenu {
