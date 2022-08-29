@@ -7,14 +7,24 @@ public class Subject {
     private int subjectId;
     private String name;
     List<Student> students;
+    List<Evaluation> evaluations;
 
     public Subject() {
     }
 
-    public Subject(int subjectId, String name, List<Student> students) {
+    public Subject(int subjectId, String name, List<Student> students, List<Evaluation> evaluations) {
         this.subjectId = subjectId;
         this.name = name;
         this.students = students;
+        this.evaluations = evaluations;
+    }
+
+    public List<Evaluation> getEvaluations() {
+        return evaluations;
+    }
+
+    public void setEvaluations(List<Evaluation> evaluations) {
+        this.evaluations = evaluations;
     }
 
     public int getSubjectId() {
