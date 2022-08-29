@@ -1,4 +1,4 @@
-package org.example.view;
+package org.example.view.interfaces;
 
 public interface IMenu {
     public void showMenu();

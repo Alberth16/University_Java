@@ -1,5 +1,5 @@
 package org.example;
-import org.example.view.IMenu;
+import org.example.view.interfaces.IMenu;
 import org.example.view.PrincipalMenu;
 
 import java.util.Scanner;

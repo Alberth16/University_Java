@@ -1,5 +1,8 @@
 package org.example.view;
 
+import org.example.view.interfaces.IDynamicOption;
+import org.example.view.interfaces.IMenu;
+
 public class PrincipalMenu implements IMenu {
     @Override
     public void showMenu() {
@@ -15,9 +18,13 @@ public class PrincipalMenu implements IMenu {
 
     @Override
     public void chooseMenuOption(String optionSelected) {
+        IDynamicOption dynamicOption;
 
         switch (optionSelected) {
-            case "1" -> System.out.println("*** Add Students ***");
+            case "1" -> {
+                        dynamicOption = new DynamicSubMenu(new SubMenuStudent());
+                        dynamicOption.getStrategy();
+                        }
             case "2" -> System.out.println("*** Update Student ***");
             case "3" -> System.out.println("*** Search Student ***");
             case "4" -> System.out.println("*** Display Students ***");

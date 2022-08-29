@@ -1,6 +1,8 @@
 package org.example.view;
 
-public class FirstSubMenu implements IMenu{
+import org.example.view.interfaces.IMenu;
+
+public class SubMenuStudent implements IMenu {
     @Override
     public void showMenu() {
         System.out.println("MENU \n---------------------");
