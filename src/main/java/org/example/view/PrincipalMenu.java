@@ -30,6 +30,5 @@ public class PrincipalMenu implements IMenu {
     @Override
     public String getExitOption() {
         return "6";
-        //while (!option.equals("6"));
     }
 }

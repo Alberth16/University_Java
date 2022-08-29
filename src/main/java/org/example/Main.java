@@ -1,10 +1,19 @@
 package org.example;
-import org.example.config.IDBConnection;
-import org.example.config.MySqlConnection;
+import org.example.view.IMenu;
+import org.example.view.PrincipalMenu;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        IDBConnection con = new MySqlConnection();
-        con.connect();
+        Scanner scanner = new Scanner(System.in);
+        IMenu menu = new PrincipalMenu();
+        String option;
+
+        do {
+            menu.showMenu();
+            option = scanner.next();
+            menu.chooseMenuOption(option);
+        }while (!option.equals(menu.getExitOption()));
     }
 }
