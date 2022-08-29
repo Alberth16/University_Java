@@ -6,7 +6,7 @@ public class Menu implements IMenu {
     @Override
     public void menu() {
         Scanner scanner = new Scanner(System.in);
-        String option = "";
+        String option;
 
         do {
             System.out.println("MENU \n---------------------");
