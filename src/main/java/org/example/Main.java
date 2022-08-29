@@ -1,11 +1,10 @@
 package org.example;
-import org.example.config.DbConnection;
-import org.example.view.Menu;
+import org.example.config.IDBConnection;
+import org.example.config.MySqlConnection;
+
 public class Main {
     public static void main(String[] args) {
-//        Menu menu = new Menu();
-        DbConnection con = new DbConnection();
-        con.Connection();
-//        menu.menu();
+        IDBConnection con = new MySqlConnection();
+        con.connect();
     }
 }
