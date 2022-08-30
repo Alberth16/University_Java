@@ -14,21 +14,20 @@ public class StudentOption implements IOption {
 
     public StudentOption(ActionType action){
         students = new ArrayList<>();
+        students.add(new Student("Rosa", "Perez", "rperez@yopmail.com", null));
+        students.add(new Student("Carlos", "Fernandez", "carlosf@yopmail.com", null));
+        students.add(new Student("Esther", "Cortez", "ecortez@yopmail.com", null));
+        students.add(new Student("Sandra", "Jorge", "sjorge@yopmail.com", null));
+        students.add(new Student("Joel", "Ventura", "jventura@yopmail.com", null));
+        students.add(new Student("Mauricio", "Cruz", "mcruz@yopmail.com", null));
+        students.add(new Student("Antonio", "Sanchez", "antonios@yopmail.com", null));
         this.action = action;
-    }
-
-    private void getStudents(){
-        students.add(new Student("Daniela", "Cruz", "@email.com", null));
-        students.add(new Student("Willy", "Wonca", "@emaiWonca.com", null));
-        students.add(new Student("meco", "third", "@mail3.com", null));
-
-        studentController.getStudents(students);
     }
 
     @Override
     public void execute() {
         switch (this.action){
-            case Get-> this.getStudents();
+            case Get-> this.studentController.getStudents(students);
         }
     }
 }
