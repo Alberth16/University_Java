@@ -1,6 +1,6 @@
 package org.example.utils;
 
-public enum ESubjectType {
+public enum SubjectType {
     Maths,
     English,
     Literature,

@@ -2,6 +2,6 @@ package org.example.view.interfaces;
 
 public interface IMenu {
     void showMenu();
-    void chooseMenuOption(String optionSelected);
-    String getExitOption();
+    void chooseOption(String optionSelected);
+    String getExitValue();
 }
