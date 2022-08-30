@@ -2,32 +2,39 @@ package org.example.view;
 import org.example.contoller.StudentController;
 import org.example.model.Student;
 import org.example.utils.ActionType;
+import org.example.utils.Data;
 import org.example.view.interfaces.IOption;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class StudentOption implements IOption {
      private final StudentController studentController = new StudentController();
      private final ActionType action;
-     private List<Student> students;
+     Scanner scanner = new Scanner(System.in);
 
     public StudentOption(ActionType action){
-        students = new ArrayList<>();
-        students.add(new Student("Rosa", "Perez", "rperez@yopmail.com", null));
-        students.add(new Student("Carlos", "Fernandez", "carlosf@yopmail.com", null));
-        students.add(new Student("Esther", "Cortez", "ecortez@yopmail.com", null));
-        students.add(new Student("Sandra", "Jorge", "sjorge@yopmail.com", null));
-        students.add(new Student("Joel", "Ventura", "jventura@yopmail.com", null));
-        students.add(new Student("Mauricio", "Cruz", "mcruz@yopmail.com", null));
-        students.add(new Student("Antonio", "Sanchez", "antonios@yopmail.com", null));
         this.action = action;
+    }
+
+    private void saveStudent(){
+        System.out.println("New Student");
+        System.out.print("Name: ");
+        String name = scanner.next();
+        System.out.print("LastName: ");
+        String lastName = scanner.next();
+        System.out.print("email: ");
+        String email = scanner.next();
+
+        this.studentController.saveStudent(new Student(name, lastName, email));
     }
 
     @Override
     public void execute() {
         switch (this.action){
-            case Get-> this.studentController.getStudents(students);
+            case Get-> this.studentController.getStudents();
+            case Save -> {
+                            this.saveStudent();
+                            this.studentController.getStudents();
+                        }
         }
     }
 }

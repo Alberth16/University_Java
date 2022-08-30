@@ -6,8 +6,7 @@ public class Student extends User{
     private List<Subject> subjects;
     public Student() {}
 
-    public Student(String name, String lastName, String email, List<Subject> subjects) {
-        this.subjects= subjects;
+    public Student(String name, String lastName, String email) {
         this.name=name;
         this.lastName=lastName;
         this.email=email;

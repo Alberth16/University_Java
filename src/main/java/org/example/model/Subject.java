@@ -6,17 +6,16 @@ public class Subject {
 
     private int subjectId;
     private String name;
-    List<Student> students;
+    Student student;
     List<Evaluation> evaluations;
 
     public Subject() {
     }
 
-    public Subject(int subjectId, String name, List<Student> students, List<Evaluation> evaluations) {
+    public Subject(int subjectId, String name, Student student) {
         this.subjectId = subjectId;
         this.name = name;
-        this.students = students;
-        this.evaluations = evaluations;
+        this.student = student;
     }
 
     public List<Evaluation> getEvaluations() {
@@ -43,11 +42,11 @@ public class Subject {
         this.name = name;
     }
 
-    public List<Student> getStudents() {
-        return students;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 }
