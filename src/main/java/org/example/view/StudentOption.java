@@ -1,18 +1,18 @@
 package org.example.view;
 import org.example.contoller.StudentController;
 import org.example.model.Student;
-import org.example.utils.EManagementType;
-import org.example.view.interfaces.IDynamicOption;
+import org.example.utils.ActionType;
+import org.example.view.interfaces.IOption;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentOption implements IDynamicOption {
-     private StudentController studentController = new StudentController();
-     private EManagementType action;
+public class StudentOption implements IOption {
+     private final StudentController studentController = new StudentController();
+     private final ActionType action;
      private List<Student> students;
 
-    public StudentOption(EManagementType action){
+    public StudentOption(ActionType action){
         students = new ArrayList<>();
         this.action = action;
     }
@@ -26,7 +26,7 @@ public class StudentOption implements IDynamicOption {
     }
 
     @Override
-    public void getStrategy() {
+    public void execute() {
         switch (this.action){
             case Get-> this.getStudents();
         }

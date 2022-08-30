@@ -1,6 +1,6 @@
 package org.example.utils;
 
-public enum EManagementType {
+public enum ActionType {
     Get,
     GetById,
     Update,
