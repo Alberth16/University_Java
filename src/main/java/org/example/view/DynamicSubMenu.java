@@ -1,5 +1,6 @@
 package org.example.view;
 
+import org.example.utils.Screen;
 import org.example.view.interfaces.IDynamicOption;
 import org.example.view.interfaces.IMenu;
 
@@ -19,6 +20,7 @@ public class DynamicSubMenu implements IDynamicOption {
         do {
             this.submenu.showMenu();
             option = scanner.next();
+            Screen.clear();
             this.submenu.chooseMenuOption(option);
         }while (!option.equals(this.submenu.getExitOption()));
     }

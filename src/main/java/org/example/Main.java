@@ -1,4 +1,5 @@
 package org.example;
+import org.example.utils.Screen;
 import org.example.view.interfaces.IMenu;
 import org.example.view.PrincipalMenu;
 
@@ -13,6 +14,7 @@ public class Main {
         do {
             menu.showMenu();
             option = scanner.next();
+            Screen.clear();
             menu.chooseMenuOption(option);
         }while (!option.equals(menu.getExitOption()));
     }

@@ -11,8 +11,7 @@ public class MySqlConnection implements IDBConnection {
        try {
            con = DriverManager.getConnection(mySqlUrl, databsseUserName, databasePassword);
        } catch (Exception e) {
-           System.out.println(e.getMessage()+"\n");
-           e.printStackTrace();
+           System.out.println(e.getMessage());
        }
 
        return con;

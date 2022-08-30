@@ -6,7 +6,7 @@ import org.example.view.interfaces.IMenu;
 public class PrincipalMenu implements IMenu {
     @Override
     public void showMenu() {
-            System.out.println("MENU \n---------------------");
+            System.out.println(".:PRINCIPAL MENU:.");
             System.out.println("1: Manage Student");
             System.out.println("2: Update ");
             System.out.println("3: Search ");

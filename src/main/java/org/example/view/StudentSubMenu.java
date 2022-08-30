@@ -1,15 +1,16 @@
 package org.example.view;
 
+import org.example.utils.EManagementType;
 import org.example.view.interfaces.IDynamicOption;
 import org.example.view.interfaces.IMenu;
 
 public class StudentSubMenu implements IMenu {
     @Override
     public void showMenu() {
-        System.out.println("MENU \n---------------------");
+        System.out.println(".:STUDENT MENU:.");
         System.out.println("1: Get students");
         System.out.println("2: Exit program");
-        System.out.print("Enter your selection : ");
+        System.out.print("Enter your selection: ");
     }
 
     @Override
@@ -18,7 +19,7 @@ public class StudentSubMenu implements IMenu {
 
         switch (optionSelected) {
             case "1" -> {
-                            dynamicOption = new StudentOption();
+                            dynamicOption = new StudentOption(EManagementType.Get);
                             dynamicOption.getStrategy();
                         }
             case "2" -> System.out.println("Exit program");
