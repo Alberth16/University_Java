@@ -8,9 +8,9 @@ public class Student extends User{
 
     public Student(String name, String lastName, String email, List<Subject> subjects) {
         this.subjects= subjects;
-        this.setName(name);
-        this.setLastName(lastName);
-        this.setEmail(email);
+        this.name=name;
+        this.lastName=lastName;
+        this.email=email;
     }
 
     public List<Subject> getSubjects() {

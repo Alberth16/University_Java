@@ -1,10 +1,10 @@
 package org.example.model;
 
 public class User {
-    private int userId;
-    private String name;
-    private String lastName;
-    private String email;
+    protected int userId;
+    protected String name;
+    protected String lastName;
+    protected String email;
 
     public int getUserId() {
         return userId;
