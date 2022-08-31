@@ -12,7 +12,6 @@ import java.util.List;
  */
 public class Data {
     public static List<Student> students = new ArrayList<>();
-    public static List<Subject> subjects = new ArrayList<>();
 
     public static void insertStudentData(){
         int i = Data.students.size();
@@ -89,13 +88,11 @@ public class Data {
 
         for(; i< Data.students.size(); i++){
             List<Subject> subjects = new ArrayList<>();
-            int id = Data.subjects.size()+1;
 
             for(SubjectType s: SubjectType.values()){
-                subjects.add(new Subject(id++, s.toString(), Data.students.get(i)));
+                subjects.add(new Subject(s.toString(), Data.students.get(i), 8));
             }
             Data.students.get(i).setSubjects(subjects);
-            Data.subjects.addAll(subjects);
         }
     }
 }

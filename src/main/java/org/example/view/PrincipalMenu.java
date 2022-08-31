@@ -10,8 +10,9 @@ public class PrincipalMenu implements IMenu {
         System.out.println("|  PRINCIPAL MENU  |");
         System.out.println("|__________________|");
         System.out.println("1: Manage Student");
-        System.out.println("2: Exit program");
-        this.exitValue = "2"; //to exit from menu
+        System.out.println("2: Manage subjects");
+        System.out.println("3: Exit program");
+        this.exitValue = "3"; //to exit from menu
         System.out.print("Enter your selection: ");
     }
 
@@ -20,7 +21,8 @@ public class PrincipalMenu implements IMenu {
         this.option = optionSelected; //to validate if it should exit
         switch (optionSelected) {
             case "1" -> new MenuManager(new StudentMenu()).execute();
-            case "2" -> System.out.println("Leaving...");
+            case "2" -> new MenuManager(new SubjectMenu()).execute();
+            case "3" -> System.out.println("Leaving...");
             default -> System.out.println("\nInvalid input\n");
         }
     }

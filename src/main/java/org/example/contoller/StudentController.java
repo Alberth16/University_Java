@@ -19,14 +19,12 @@ public class StudentController {
     public void saveStudent(Student student){
         student.setUserId(Data.students.size() + 1);
         List<Subject> subjects = new ArrayList<>();
-        int id = Data.subjects.size()+1;
 
         for(SubjectType s: SubjectType.values()){
-            subjects.add(new Subject(id++, s.toString(), student));
+            subjects.add(new Subject(s.toString(), student, 0));
         }
 
         student.setSubjects(subjects);
-        Data.subjects.addAll(subjects);
         Data.students.add(student);
     }
 
@@ -38,7 +36,7 @@ public class StudentController {
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
             System.out.println();
             System.out.printf("%5s %15s %15s %25s%n",st.getUserId(),st.getName(),st.getLastName(),st.getEmail());
-            st.getSubjects().forEach((s)-> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n","","","","",s.getSubjectId(),s.getName(),"",0.0));
+            st.getSubjects().forEach((s)-> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n","","","","",st.getSubjects().indexOf(s)+1,s.getName(),"",s.getGrade()));
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
         }else{
             System.out.println("\nStudent not found\n");

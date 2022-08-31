@@ -3,18 +3,18 @@ import java.util.List;
 
 public class Subject {
 
-    private int subjectId;
     private String name;
     Student student;
+    private float grade;
     List<Evaluation> evaluations;
 
     public Subject() {
     }
 
-    public Subject(int subjectId, String name, Student student) {
-        this.subjectId = subjectId;
+    public Subject(String name, Student student, float grade) {
         this.name = name;
         this.student = student;
+        this.grade = grade;
     }
 
     public List<Evaluation> getEvaluations() {
@@ -23,14 +23,6 @@ public class Subject {
 
     public void setEvaluations(List<Evaluation> evaluations) {
         this.evaluations = evaluations;
-    }
-
-    public int getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(int subjectId) {
-        this.subjectId = subjectId;
     }
 
     public String getName() {
@@ -47,5 +39,13 @@ public class Subject {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public float getGrade() {
+        return grade;
+    }
+
+    public void setGrade(float grade) {
+        this.grade = grade;
     }
 }
