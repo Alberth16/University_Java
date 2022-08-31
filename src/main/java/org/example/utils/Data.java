@@ -6,6 +6,10 @@ import org.example.model.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Use this class like a database
+ * Use word "static" to make global variables
+ */
 public class Data {
     public static List<Student> students = new ArrayList<>();
     public static List<Subject> subjects = new ArrayList<>();

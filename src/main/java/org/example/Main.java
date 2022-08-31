@@ -6,6 +6,7 @@ import org.example.view.PrincipalMenu;
 
 public class Main {
     public static void main(String[] args) {
+        // insert data, simulating a database
         Data.setStudentData();
         Screen.clear();
         new SubmenuManager(new PrincipalMenu()).execute();
