@@ -11,9 +11,10 @@ public class SubjectMenu implements IMenu {
         System.out.println(".________________.");
         System.out.println("|  SUBJECT MENU  |");
         System.out.println("|________________|");
-        System.out.println("1: Get Subject by ID and its student");
-        System.out.println("2: Exit");
-        this.exitValue = "2"; //to exit from menu
+        System.out.println("1: Get scores by subject ID");
+        System.out.println("2: Get subjects");
+        System.out.println("3: Exit");
+        this.exitValue = "3"; //to exit from menu
         System.out.print("Enter your selection: ");
     }
 
@@ -22,7 +23,8 @@ public class SubjectMenu implements IMenu {
         this.option = optionSelected;
         switch (optionSelected) {
             case "1" -> new SubjectOption(ActionType.GetById).execute();
-            case "2" -> System.out.println();
+            case "2" -> new SubjectOption(ActionType.Get).execute();
+            case "3" -> System.out.println();
             default -> System.out.println("\nInvalid input\n");
         }
     }
