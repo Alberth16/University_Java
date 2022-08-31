@@ -1,35 +1,32 @@
 package org.example.view;
-
-import org.example.view.interfaces.IOption;
 import org.example.view.interfaces.IMenu;
 
 public class PrincipalMenu implements IMenu {
+    private String exitValue;
+    private String option;
     @Override
     public void showMenu() {
-            System.out.println(".______________.");
-            System.out.println("|PRINCIPAL MENU|");
-            System.out.println("|______________|");
-            System.out.println("1: Manage Student");
-            System.out.println("2: Exit program");
-            System.out.print("Enter your selection: ");
+        System.out.println(".__________________.");
+        System.out.println("|  PRINCIPAL MENU  |");
+        System.out.println("|__________________|");
+        System.out.println("1: Manage Student");
+        System.out.println("2: Exit program");
+        this.exitValue = "2"; //to exit from menu
+        System.out.print("Enter your selection: ");
     }
 
     @Override
-    public void chooseOption(String optionSelected) {
-        IOption option;
-
+    public void selectOption(String optionSelected) {
+        this.option = optionSelected; //to validate if it should exit
         switch (optionSelected) {
-            case "1" -> {
-                            option = new SubmenuManager(new StudentMenu());
-                            option.execute();
-                        }
+            case "1" -> new MenuManager(new StudentMenu()).execute();
             case "2" -> System.out.println("Leaving...");
             default -> System.out.println("\nInvalid input\n");
         }
     }
 
     @Override
-    public String getExitValue() {
-        return "2";
+    public boolean exit() {
+        return this.option.equals(this.exitValue);
     }
 }

@@ -1,14 +1,14 @@
 package org.example;
 import org.example.utils.Data;
 import org.example.utils.Screen;
-import org.example.view.SubmenuManager;
+import org.example.view.MenuManager;
 import org.example.view.PrincipalMenu;
 
 public class Main {
     public static void main(String[] args) {
         // insert data, simulating a database
-        Data.setStudentData();
+        Data.insertStudentData();
         Screen.clear();
-        new SubmenuManager(new PrincipalMenu()).execute();
+        new MenuManager(new PrincipalMenu()).execute();
     }
 }

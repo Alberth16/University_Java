@@ -2,7 +2,6 @@ package org.example.view;
 import org.example.contoller.StudentController;
 import org.example.model.Student;
 import org.example.utils.ActionType;
-import org.example.utils.Data;
 import org.example.view.interfaces.IOption;
 import java.util.Scanner;
 
@@ -16,7 +15,7 @@ public class StudentOption implements IOption {
     }
 
     private void saveStudent(){
-        System.out.println("New Student");
+        System.out.println("Enter a new Student");
         System.out.print("Name: ");
         String name = scanner.next();
         System.out.print("LastName: ");
@@ -28,7 +27,7 @@ public class StudentOption implements IOption {
     }
 
     private void getStudentById(){
-        System.out.print("Enter student ID to search: ");
+        System.out.print("Enter student ID: ");
         String idString = scanner.next();
         int id = 0;
         if(idString.matches("\\d+")){
@@ -42,9 +41,9 @@ public class StudentOption implements IOption {
         switch (this.action){
             case Get-> this.studentController.getStudents();
             case Save -> {
-                            this.saveStudent();
-                            this.studentController.getStudents();
-                        }
+                this.saveStudent();
+                this.studentController.getStudents();
+            }
             case GetById -> this.getStudentById();
         }
     }

@@ -14,7 +14,7 @@ public class Data {
     public static List<Student> students = new ArrayList<>();
     public static List<Subject> subjects = new ArrayList<>();
 
-    public static void setStudentData(){
+    public static void insertStudentData(){
         int i = Data.students.size();
 
         Student student1= new Student();
@@ -87,7 +87,7 @@ public class Data {
         student10.setEmail("test@yopmail.com");
         Data.students.add(student10);
 
-        for(i= i; i< Data.students.size(); i++){
+        for(; i< Data.students.size(); i++){
             List<Subject> subjects = new ArrayList<>();
             int id = Data.subjects.size()+1;
 
