@@ -27,6 +27,16 @@ public class StudentOption implements IOption {
         this.studentController.saveStudent(new Student(name, lastName, email));
     }
 
+    private void getStudentById(){
+        System.out.print("Enter student ID to search: ");
+        String idString = scanner.next();
+        int id = 0;
+        if(idString.matches("\\d+")){
+            id = Integer.parseInt(idString);
+        }
+        this.studentController.getStudentById(id);
+    }
+
     @Override
     public void execute() {
         switch (this.action){
@@ -35,6 +45,7 @@ public class StudentOption implements IOption {
                             this.saveStudent();
                             this.studentController.getStudents();
                         }
+            case GetById -> this.getStudentById();
         }
     }
 }

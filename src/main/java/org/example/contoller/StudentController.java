@@ -31,4 +31,19 @@ public class StudentController {
         Data.students.add(student);
     }
 
+    public void getStudentById(int studentId){
+        if(studentId <= Data.students.size() && studentId > 0){
+            Student st = Data.students.get(studentId - 1);
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%5s %15s %15s %25s %10s %25s %10s%n","ID", "NAME", "LASTNAME", "EMAIL", "ID", "SUBJECT", "GRADE");
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.println();
+            System.out.printf("%5s %15s %15s %25s%n",st.getUserId(),st.getName(),st.getLastName(),st.getEmail());
+            st.getSubjects().forEach((s)-> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n","","","","",s.getSubjectId(),s.getName(),"",0.0));
+            System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+        }else{
+            System.out.println("\nStudent not found\n");
+        }
+    }
+
 }

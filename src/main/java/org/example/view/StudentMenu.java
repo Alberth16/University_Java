@@ -11,8 +11,9 @@ public class StudentMenu implements IMenu {
         System.out.println("|STUDENT MENU|");
         System.out.println("|____________|");
         System.out.println("1: Get students");
-        System.out.println("2: save students");
-        System.out.println("3: Exit");
+        System.out.println("2: Save students");
+        System.out.println("3: Find student by ID");
+        System.out.println("4: Exit");
         System.out.print("Enter your selection: ");
     }
 
@@ -29,13 +30,17 @@ public class StudentMenu implements IMenu {
                             option = new StudentOption(ActionType.Save);
                             option.execute();
                         }
-            case "3" -> System.out.println();
+            case "3" ->{
+                            option = new StudentOption(ActionType.GetById);
+                            option.execute();
+                        }
+            case "4" -> System.out.println();
             default -> System.out.println("\nInvalid input\n");
         }
     }
 
     @Override
     public String getExitValue() {
-        return "3";
+        return "4";
     }
 }
