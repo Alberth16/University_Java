@@ -22,9 +22,9 @@ public class StudentMenu implements IMenu {
     public void selectOption(String optionSelected) {
         this.option = optionSelected;
         switch (optionSelected) {
-            case "1" -> new StudentOption(ActionType.Get).execute();
-            case "2" -> new StudentOption(ActionType.Save).execute();
-            case "3" -> new StudentOption(ActionType.GetById).execute();
+            case "1" -> new StudentOption(ActionType.GET).execute();
+            case "2" -> new StudentOption(ActionType.SAVE).execute();
+            case "3" -> new StudentOption(ActionType.GET_BY_ID).execute();
             case "4" -> System.out.println();
             default -> System.out.println("\nInvalid input\n");
         }

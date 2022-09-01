@@ -7,22 +7,23 @@ import org.example.utils.SubjectType;
 import org.example.utils.Validation;
 
 public class SubjectController {
-
+    private String line;
 
     public void getSubjectById(int subjectId) {
         if (Validation.isValidSubjectId(subjectId)) {
-            System.out.println("--------------------------------------------------------------------------------------------------");
+            this.line ="--------------------------------------------------------------------------------------------------";
+            System.out.println(this.line);
             System.out.printf("%5s %15s %10s %20s %20s %10s%n","ID", "SUBJECT", "ID", "NAME","LASTNAME","GRADE");
-            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.println(this.line);
             System.out.println();
             System.out.printf("%5s %15s%n", subjectId ,SubjectType.values()[subjectId-1]);
-            Data.students.forEach((st)-> System.out.printf("%5s %15s %10s %20s %20s %5s %.2f%n","","",st.getUserId(),st.getName(),st.getLastName(),"",st.getSubjects().get(subjectId-1).getGrade()));
+            Data.students.forEach(st-> System.out.printf("%5s %15s %10s %20s %20s %5s %.2f%n","","",st.getUserId(),st.getName(),st.getLastName(),"",st.getSubjects().get(subjectId-1).getGrade()));
             System.out.println();
-            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.println(this.line);
             System.out.printf("%25s %.2f", "AVERAGE GRADE:",this.getAverage(subjectId));
             System.out.printf("%25s %.2f", "MINIMUM GRADE:",this.getMinGrade(subjectId));
             System.out.printf("%25s %.2f%n", "MAXIMUM GRADE:",this.getMaxGrade(subjectId));
-            System.out.println("__________________________________________________________________________________________________");
+            System.out.println(this.line);
         }else{
             System.out.println("\nSubject not found\n");
         }
@@ -44,7 +45,7 @@ public class SubjectController {
             return (float) Data.students
                                 .stream()
                                 .map(Student::getSubjects)
-                                .mapToDouble((sb)->sb.get(subjectId-1).getGrade())
+                                .mapToDouble(sb->sb.get(subjectId-1).getGrade())
                                 .min()
                                 .orElse(0);
         }
@@ -55,7 +56,7 @@ public class SubjectController {
             return (float) Data.students
                     .stream()
                     .map(Student::getSubjects)
-                    .mapToDouble((sb)->sb.get(subjectId-1).getGrade())
+                    .mapToDouble(sb->sb.get(subjectId-1).getGrade())
                     .max()
                     .orElse(0);
         }
@@ -64,14 +65,15 @@ public class SubjectController {
 
     public void getSubjects(){
         int i = 1;
-        System.out.println("__________________________________");
+        this.line = "__________________________________";
+        System.out.println(this.line);
         System.out.printf("%5s %25s%n", "ID", "SUBJECT");
-        System.out.println("__________________________________");
+        System.out.println(this.line);
         System.out.println();
         for(SubjectType sb: SubjectType.values()){
-           System.out.printf("%5s %25s%n", i++, sb);
-       }
-        System.out.println("__________________________________");
+            System.out.printf("%5s %25s%n", i++, sb);
+        }
+        System.out.println(this.line);
     }
 
     public void saveGrade(int studentId, int subjectId, float newGrade){
@@ -79,10 +81,11 @@ public class SubjectController {
             Data.students.get(studentId-1).getSubjects().get(subjectId-1).setGrade(newGrade);
             Student st = Data.students.get(studentId -1);
             Subject sj = st.getSubjects().get(subjectId -1);
-
-            System.out.println("_________________________________________________________________________");
+            this.line= "_________________________________________________________________________";
+            System.out.println(this.line);
             System.out.printf("%5s %20s %20s %15s %5s%n", st.getUserId(),st.getName(), st.getLastName(),sj.getName(), sj.getGrade() );
-            System.out.println("_________________________________________________________________________");
+            System.out.println(this.line);
+
         }else{
             System.out.println("\nSubject not found\n");
         }

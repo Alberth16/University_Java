@@ -1,7 +1,7 @@
 package org.example.utils;
 
 public enum ActionType {
-    Get,
-    GetById,
-    Save
+    GET,
+    GET_BY_ID,
+    SAVE
 }

@@ -4,4 +4,7 @@ public class Screen {
     public static void clear(){
         System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
     }
+
+    private Screen() {
+    }
 }

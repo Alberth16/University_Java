@@ -36,12 +36,12 @@ public class StudentOption implements IOption {
     @Override
     public void execute() {
         switch (this.action){
-            case Get-> this.studentController.getStudents();
-            case Save -> {
+            case GET-> this.studentController.getStudents();
+            case SAVE -> {
                 this.saveStudent();
                 this.studentController.getStudents();
             }
-            case GetById -> this.getStudentById();
+            case GET_BY_ID -> this.getStudentById();
         }
     }
 }

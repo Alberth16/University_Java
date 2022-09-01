@@ -40,9 +40,9 @@ public class SubjectOption implements IOption {
     @Override
     public void execute() {
         switch (this.action) {
-            case GetById -> this.getSubjectById();
-            case Get -> subjectController.getSubjects();
-            case Save -> this.saveGrade();
+            case GET_BY_ID -> this.getSubjectById();
+            case GET -> subjectController.getSubjects();
+            case SAVE -> this.saveGrade();
         }
     }
 }

@@ -1,6 +1,7 @@
 package org.example.utils;
 
 public class Validation {
+    private Validation(){}
     public static int validateParseInt(String idString){
         if(idString.matches("\\d+")){
             return Integer.parseInt(idString);
@@ -20,7 +21,7 @@ public class Validation {
     }
 
     public static boolean isValidSubjectId(int id){
-        if(id > 0 && Data.students.size() > 0){
+        if(id > 0 && !Data.students.isEmpty()){
             return id <= Data.students.get(0).getSubjects().size();
         }
         return false;

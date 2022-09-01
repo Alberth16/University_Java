@@ -23,9 +23,9 @@ public class SubjectMenu implements IMenu {
     public void selectOption(String optionSelected) {
         this.option = optionSelected;
         switch (optionSelected) {
-            case "1" -> new SubjectOption(ActionType.GetById).execute();
-            case "2" -> new SubjectOption(ActionType.Get).execute();
-            case "3" -> new SubjectOption(ActionType.Save).execute();
+            case "1" -> new SubjectOption(ActionType.GET_BY_ID).execute();
+            case "2" -> new SubjectOption(ActionType.GET).execute();
+            case "3" -> new SubjectOption(ActionType.SAVE).execute();
             case "4" -> System.out.println();
             default -> System.out.println("\nInvalid input\n");
         }
