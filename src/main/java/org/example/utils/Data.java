@@ -5,6 +5,7 @@ import org.example.model.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Use this class like a database
@@ -90,7 +91,9 @@ public class Data {
             List<Subject> subjects = new ArrayList<>();
 
             for(SubjectType s: SubjectType.values()){
-                subjects.add(new Subject(s.toString(), Data.students.get(i), 8));
+                double randomScore = 4 + new Random().nextFloat() * (10.01 - 4);
+                subjects.add(new Subject(s.toString(), Data.students.get(i), Float.parseFloat(randomScore+"")));
+                Data.students.get(i).setSubjects(subjects);
             }
             Data.students.get(i).setSubjects(subjects);
         }

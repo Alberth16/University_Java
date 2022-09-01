@@ -2,6 +2,7 @@ package org.example.view;
 import org.example.contoller.StudentController;
 import org.example.model.Student;
 import org.example.utils.ActionType;
+import org.example.utils.Validation;
 import org.example.view.interfaces.IOption;
 import java.util.Scanner;
 
@@ -28,11 +29,7 @@ public class StudentOption implements IOption {
 
     private void getStudentById(){
         System.out.print("Enter student ID: ");
-        String idString = scanner.next();
-        int id = 0;
-        if(idString.matches("\\d+")){
-            id = Integer.parseInt(idString);
-        }
+        int id = Validation.validateParseInt(scanner.next());
         this.studentController.getStudentById(id);
     }
 

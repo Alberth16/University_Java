@@ -1,8 +1,10 @@
 package org.example.contoller;
 
 import org.example.model.Student;
+import org.example.model.Subject;
 import org.example.utils.Data;
 import org.example.utils.SubjectType;
+import org.example.utils.Validation;
 
 public class SubjectController {
 
@@ -15,17 +17,18 @@ public class SubjectController {
     }
 
     private float getAverage(int subjectId){
-        float gradesSum = 0;
-        for(Student st : Data.students){
-            if(subjectId > 0 && subjectId <= st.getSubjects().size()){
+        if(Validation.isValidSubjectId(subjectId)){
+            float gradesSum = 0;
+            for(Student st : Data.students){
                 gradesSum += st.getSubjects().get(subjectId).getGrade();
             }
+                return gradesSum / Data.students.size();
         }
-        return gradesSum / Data.students.size();
+        return 0;
     }
 
     private float getMinGrade(int subjectId){
-        if(subjectId > 0 && subjectId <= Data.students.get(0).getSubjects().size()){
+        if(Validation.isValidSubjectId(subjectId)){
             return (float) Data.students
                                 .stream()
                                 .map(Student::getSubjects)
@@ -36,7 +39,7 @@ public class SubjectController {
         return 0;
     }
     private float getMaxGrade(int subjectId){
-        if(subjectId > 0 && subjectId <= Data.students.get(0).getSubjects().size()){
+        if(Validation.isValidSubjectId(subjectId)){
             return (float) Data.students
                     .stream()
                     .map(Student::getSubjects)
@@ -57,5 +60,13 @@ public class SubjectController {
            System.out.printf("%5s %25s%n", i++, sb);
        }
         System.out.println("__________________________________");
+    }
+
+    public void saveGrade(int studentId, int subjectId, float newGrade){
+        if(Validation.isValidStudentId(studentId) && Validation.isValidSubjectId(subjectId)){
+            Data.students.get(studentId-1).getSubjects().get(subjectId-1).setGrade(newGrade);
+        }else{
+            System.out.println("\nSubject not found\n");
+        }
     }
 }

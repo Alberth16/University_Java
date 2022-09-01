@@ -13,8 +13,9 @@ public class SubjectMenu implements IMenu {
         System.out.println("|________________|");
         System.out.println("1: Get scores by subject ID");
         System.out.println("2: Get subjects");
-        System.out.println("3: Exit");
-        this.exitValue = "3"; //to exit from menu
+        System.out.println("3: save or update scores");
+        System.out.println("4: Exit");
+        this.exitValue = "4"; //to exit from menu
         System.out.print("Enter your selection: ");
     }
 
@@ -24,7 +25,8 @@ public class SubjectMenu implements IMenu {
         switch (optionSelected) {
             case "1" -> new SubjectOption(ActionType.GetById).execute();
             case "2" -> new SubjectOption(ActionType.Get).execute();
-            case "3" -> System.out.println();
+            case "3" -> new SubjectOption(ActionType.Save).execute();
+            case "4" -> System.out.println();
             default -> System.out.println("\nInvalid input\n");
         }
     }

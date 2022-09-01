@@ -3,6 +3,8 @@ import org.example.model.Student;
 import org.example.model.Subject;
 import org.example.utils.Data;
 import org.example.utils.SubjectType;
+import org.example.utils.Validation;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class StudentController {
     }
 
     public void getStudentById(int studentId){
-        if(studentId <= Data.students.size() && studentId > 0){
+        if(Validation.isValidStudentId(studentId)){
             Student st = Data.students.get(studentId - 1);
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
             System.out.printf("%5s %15s %15s %25s %10s %25s %10s%n","ID", "NAME", "LASTNAME", "EMAIL", "ID", "SUBJECT", "GRADE");
