@@ -1,4 +1,5 @@
 package org.example.utils;
+
 public enum SubjectType {
     MATHS,
     ENGLISH,

@@ -32,5 +32,10 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.sonarsource.sonarlint.core</groupId>
+            <artifactId>sonarlint-core</artifactId>
+            <version>8.7.0.52152</version>
+        </dependency>
     </dependencies>
 </project>

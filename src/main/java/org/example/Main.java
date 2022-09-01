@@ -1,4 +1,5 @@
 package org.example;
+
 import org.example.utils.Data;
 import org.example.utils.Screen;
 import org.example.view.MenuManager;
