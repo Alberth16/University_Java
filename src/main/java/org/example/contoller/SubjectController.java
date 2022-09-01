@@ -19,9 +19,9 @@ public class SubjectController {
             Data.students.forEach((st)-> System.out.printf("%5s %15s %10s %20s %20s %5s %.2f%n","","",st.getUserId(),st.getName(),st.getLastName(),"",st.getSubjects().get(subjectId-1).getGrade()));
             System.out.println();
             System.out.println("--------------------------------------------------------------------------------------------------");
-            System.out.printf("%25s %.2f", "AVERAGE GRADE:",this.getAverage(subjectId-1));
-            System.out.printf("%25s %.2f", "MINIMUM GRADE:",this.getMinGrade(subjectId-1));
-            System.out.printf("%25s %.2f%n", "MAXIMUM GRADE:",this.getMaxGrade(subjectId -1));
+            System.out.printf("%25s %.2f", "AVERAGE GRADE:",this.getAverage(subjectId));
+            System.out.printf("%25s %.2f", "MINIMUM GRADE:",this.getMinGrade(subjectId));
+            System.out.printf("%25s %.2f%n", "MAXIMUM GRADE:",this.getMaxGrade(subjectId));
             System.out.println("__________________________________________________________________________________________________");
         }else{
             System.out.println("\nSubject not found\n");
@@ -32,7 +32,7 @@ public class SubjectController {
         if(Validation.isValidSubjectId(subjectId)){
             float gradesSum = 0;
             for(Student st : Data.students){
-                gradesSum += st.getSubjects().get(subjectId).getGrade();
+                gradesSum += st.getSubjects().get(subjectId-1).getGrade();
             }
                 return gradesSum / Data.students.size();
         }
@@ -44,7 +44,7 @@ public class SubjectController {
             return (float) Data.students
                                 .stream()
                                 .map(Student::getSubjects)
-                                .mapToDouble((sb)->sb.get(subjectId).getGrade())
+                                .mapToDouble((sb)->sb.get(subjectId-1).getGrade())
                                 .min()
                                 .orElse(0);
         }
@@ -55,7 +55,7 @@ public class SubjectController {
             return (float) Data.students
                     .stream()
                     .map(Student::getSubjects)
-                    .mapToDouble((sb)->sb.get(subjectId).getGrade())
+                    .mapToDouble((sb)->sb.get(subjectId-1).getGrade())
                     .max()
                     .orElse(0);
         }
