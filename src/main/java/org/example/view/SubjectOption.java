@@ -26,7 +26,7 @@ public class SubjectOption implements IOption {
         int subjectId = Validation.validateParseInt(scanner.next());
 
         if (newGrade > 10 || newGrade < 0) {
-            System.out.println("Grade invalid!");
+            System.out.println("\nGrade invalid!\n");
         } else {
             this.subjectController.saveGrade(studentId, subjectId, newGrade);
         }

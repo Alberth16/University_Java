@@ -65,6 +65,12 @@ public class SubjectController {
     public void saveGrade(int studentId, int subjectId, float newGrade){
         if(Validation.isValidStudentId(studentId) && Validation.isValidSubjectId(subjectId)){
             Data.students.get(studentId-1).getSubjects().get(subjectId-1).setGrade(newGrade);
+            Student st = Data.students.get(studentId -1);
+            Subject sj = st.getSubjects().get(subjectId -1);
+
+            System.out.println("_________________________________________________________________________");
+            System.out.printf("%5s %20s %20s %15s %5s%n", st.getUserId(),st.getName(), st.getLastName(),sj.getName(), sj.getGrade() );
+            System.out.println("_________________________________________________________________________");
         }else{
             System.out.println("\nSubject not found\n");
         }

@@ -13,7 +13,7 @@ public class SubjectMenu implements IMenu {
         System.out.println("|________________|");
         System.out.println("1: Get scores by subject ID");
         System.out.println("2: Get subjects");
-        System.out.println("3: save or update scores");
+        System.out.println("3: save or update score");
         System.out.println("4: Exit");
         this.exitValue = "4"; //to exit from menu
         System.out.print("Enter your selection: ");

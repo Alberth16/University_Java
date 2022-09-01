@@ -92,8 +92,7 @@ public class Data {
 
             for(SubjectType s: SubjectType.values()){
                 double randomScore = 4 + new Random().nextFloat() * (10.01 - 4);
-                subjects.add(new Subject(s.toString(), Data.students.get(i), Float.parseFloat(randomScore+"")));
-                Data.students.get(i).setSubjects(subjects);
+                subjects.add(new Subject(s.toString(), Float.parseFloat(randomScore+"")));
             }
             Data.students.get(i).setSubjects(subjects);
         }

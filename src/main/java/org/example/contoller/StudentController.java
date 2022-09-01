@@ -23,7 +23,7 @@ public class StudentController {
         List<Subject> subjects = new ArrayList<>();
 
         for(SubjectType s: SubjectType.values()){
-            subjects.add(new Subject(s.toString(), student, 0));
+            subjects.add(new Subject(s.toString(), 0));
         }
 
         student.setSubjects(subjects);
