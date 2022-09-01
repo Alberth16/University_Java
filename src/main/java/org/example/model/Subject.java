@@ -1,4 +1,10 @@
 package org.example.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Subject {
 
     private final String name;
@@ -9,15 +15,4 @@ public class Subject {
         this.grade = grade;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public float getGrade() {
-        return grade;
-    }
-
-    public void setGrade(float grade) {
-        this.grade = grade;
-    }
 }
