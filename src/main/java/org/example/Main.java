@@ -1,11 +1,14 @@
 package org.example;
-import org.example.config.DbConnection;
-import org.example.view.Menu;
+import org.example.utils.Data;
+import org.example.utils.Screen;
+import org.example.view.MenuManager;
+import org.example.view.PrincipalMenu;
+
 public class Main {
     public static void main(String[] args) {
-//        Menu menu = new Menu();
-        DbConnection con = new DbConnection();
-        con.Connection();
-//        menu.menu();
+        // insert data, simulating a database
+        Data.insertStudentData();
+        Screen.clear();
+        new MenuManager(new PrincipalMenu()).execute();
     }
 }
