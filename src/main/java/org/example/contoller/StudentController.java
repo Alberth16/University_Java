@@ -39,10 +39,62 @@ public class StudentController {
             System.out.println();
             System.out.printf("%5s %15s %15s %25s%n",st.getUserId(),st.getName(),st.getLastName(),st.getEmail());
             st.getSubjects().forEach((s)-> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n","","","","",st.getSubjects().indexOf(s)+1,s.getName(),"",s.getGrade()));
+            System.out.println();
             System.out.println("--------------------------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%20s %3s", "FAILED:",this.getFailedScores(studentId));
+            System.out.printf("%15s %3s", "APPROVED:",this.getApprovedScores(studentId));
+            System.out.printf("%25s %.2f", "LOWEST SCORE:", this.getLowestScore(studentId));
+            System.out.printf("%25s %.2f%n", "HIGHEST SCORE:",this.getHighestScore(studentId));
+            System.out.println("______________________________________________________________________________________________________________________________________");
         }else{
             System.out.println("\nStudent not found\n");
         }
     }
+
+    private int getFailedScores(int studentId){
+        if(Validation.isValidStudentId(studentId)){
+            Student st = Data.students.get(studentId -1);
+           return (int) st.getSubjects()
+                          .stream()
+                          .filter((sj)-> sj.getGrade() < 7 )
+                          .mapToDouble(Subject::getGrade)
+                          .count();
+        }
+        return 0;
+    }
+    private int getApprovedScores(int studentId){
+        if(Validation.isValidStudentId(studentId)){
+            Student st = Data.students.get(studentId -1);
+            return (int) st.getSubjects()
+                    .stream()
+                    .filter((sj)-> sj.getGrade() >= 7 )
+                    .mapToDouble(Subject::getGrade)
+                    .count();
+        }
+        return 0;
+    }
+    private float getLowestScore(int studentId){
+        if(Validation.isValidStudentId(studentId)){
+            Student st = Data.students.get(studentId -1);
+            return (float) st.getSubjects()
+                    .stream()
+                    .mapToDouble(Subject::getGrade)
+                    .min()
+                    .orElse(0);
+        }
+        return 0;
+    }
+    private float getHighestScore(int studentId){
+        if(Validation.isValidStudentId(studentId)){
+            Student st = Data.students.get(studentId -1);
+            return (float) st.getSubjects()
+                    .stream()
+                    .mapToDouble(Subject::getGrade)
+                    .max()
+                    .orElse(0);
+        }
+        return 0;
+    }
+
 
 }
