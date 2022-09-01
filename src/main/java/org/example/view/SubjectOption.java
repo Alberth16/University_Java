@@ -17,13 +17,7 @@ public class SubjectOption implements IOption {
     }
 
 
-
-
-
-
-
-
-    public void saveGrade(){
+    public void saveGrade() {
         System.out.print("Enter new grade (range 1-10): ");
         float newGrade = Validation.validateParseFloat(scanner.next());
         System.out.print("Enter student Id: ");
@@ -31,15 +25,16 @@ public class SubjectOption implements IOption {
         System.out.print("Enter subject Id: ");
         int subjectId = Validation.validateParseInt(scanner.next());
 
-        if(newGrade > 10 && newGrade <=0){
+        if (newGrade > 10 || newGrade < 0) {
             System.out.println("Grade invalid!");
-        }else{
+        } else {
             this.subjectController.saveGrade(studentId, subjectId, newGrade);
         }
     }
+
     @Override
     public void execute() {
-        switch (this.action){
+        switch (this.action) {
             case GetById -> subjectController.getGradesBySubjectId(5);
             case Get -> subjectController.getSubjects();
             case Save -> this.saveGrade();
