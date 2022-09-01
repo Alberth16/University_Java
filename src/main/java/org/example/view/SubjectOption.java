@@ -9,13 +9,12 @@ import java.util.Scanner;
 
 public class SubjectOption implements IOption {
     private final SubjectController subjectController = new SubjectController();
-    private final ActionType action;
     Scanner scanner = new Scanner(System.in);
+    private final ActionType action;
 
     public SubjectOption(ActionType action) {
         this.action = action;
     }
-
 
     public void saveGrade() {
         System.out.print("Enter new grade (range 1-10): ");
@@ -32,10 +31,16 @@ public class SubjectOption implements IOption {
         }
     }
 
+    public void getSubjectById(){
+        System.out.print("Enter subject ID: ");
+        int id = Validation.validateParseInt(scanner.next());
+        this.subjectController.getSubjectById(id);
+    }
+
     @Override
     public void execute() {
         switch (this.action) {
-            case GetById -> subjectController.getGradesBySubjectId(5);
+            case GetById -> this.getSubjectById();
             case Get -> subjectController.getSubjects();
             case Save -> this.saveGrade();
         }

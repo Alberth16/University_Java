@@ -9,16 +9,22 @@ import org.example.utils.Validation;
 public class SubjectController {
 
 
-    public void getGradesBySubjectId(int subjectId) {
-        if (subjectId <= Data.students.get(0).getSubjects().size() && subjectId > 0) {
-            System.out.println("-------------------------------------------------------------------------------------------------------------------");
-            System.out.printf("%5s %25s %8s %5s%n", "ID", "SUBJECT", "ID STUDENT", "GRADE");
-            System.out.println("-------------------------------------------------------------------------------------------------------------------");
+    public void getSubjectById(int subjectId) {
+        if (Validation.isValidSubjectId(subjectId)) {
+            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.printf("%5s %15s %10s %20s %20s %10s%n","ID", "SUBJECT", "ID", "NAME","LASTNAME","GRADE");
+            System.out.println("--------------------------------------------------------------------------------------------------");
             System.out.println();
-            /*Data.students.forEach((st) ->{
-                Subject sj = st.getSubjects().get(subjectId - 1);
-                System.out.printf("",subjectId,sj.getName());
-            });*/
+            System.out.printf("%5s %15s%n", subjectId ,SubjectType.values()[subjectId-1]);
+            Data.students.forEach((st)-> System.out.printf("%5s %15s %10s %20s %20s %5s %.2f%n","","",st.getUserId(),st.getName(),st.getLastName(),"",st.getSubjects().get(subjectId-1).getGrade()));
+            System.out.println();
+            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.printf("%25s %.2f", "AVERAGE GRADE:",this.getAverage(subjectId-1));
+            System.out.printf("%25s %.2f", "MINIMUM GRADE:",this.getMinGrade(subjectId-1));
+            System.out.printf("%25s %.2f%n", "MAXIMUM GRADE:",this.getMaxGrade(subjectId -1));
+            System.out.println("__________________________________________________________________________________________________");
+        }else{
+            System.out.println("\nSubject not found\n");
         }
     }
 
