@@ -16,17 +16,12 @@ public class Validation {
     }
 
     public static boolean isValidStudentId(int id){
-        if(id > 0 && id <= Data.students.size()){
-            return true;
-        }
-        return false;
+        return id > 0 && id <= Data.students.size();
     }
 
     public static boolean isValidSubjectId(int id){
         if(id > 0 && Data.students.size() > 0){
-            if(id <= Data.students.get(0).getSubjects().size()){
-                return true;
-            }
+            return id <= Data.students.get(0).getSubjects().size();
         }
         return false;
     }

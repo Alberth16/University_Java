@@ -8,12 +8,18 @@ import org.example.utils.Validation;
 
 public class SubjectController {
 
-    public void getGradesBySubjectId(int subjectId){
-// validar que el id este dentro del rando del list de matrias (dentro del rango del size)
-            System.out.println( this.getAverage(subjectId));
-        System.out.println( this.getAverage(subjectId) / Data.students.size());
 
-
+    public void getGradesBySubjectId(int subjectId) {
+        if (subjectId <= Data.students.get(0).getSubjects().size() && subjectId > 0) {
+            System.out.println("-------------------------------------------------------------------------------------------------------------------");
+            System.out.printf("%5s %25s %8s %5s%n", "ID", "SUBJECT", "ID STUDENT", "GRADE");
+            System.out.println("-------------------------------------------------------------------------------------------------------------------");
+            System.out.println();
+            /*Data.students.forEach((st) ->{
+                Subject sj = st.getSubjects().get(subjectId - 1);
+                System.out.printf("",subjectId,sj.getName());
+            });*/
+        }
     }
 
     private float getAverage(int subjectId){

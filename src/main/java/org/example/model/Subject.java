@@ -1,9 +1,7 @@
 package org.example.model;
-import java.util.List;
-
 public class Subject {
 
-    private String name;
+    private final String name;
     private float grade;
 
     public Subject(String name, float grade) {
