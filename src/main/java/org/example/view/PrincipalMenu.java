@@ -1,4 +1,6 @@
 package org.example.view;
+import org.example.utils.StudentTxtReport;
+import org.example.utils.SubjectTxtReport;
 import org.example.view.interfaces.IMenu;
 
 public class PrincipalMenu implements IMenu {
@@ -11,8 +13,10 @@ public class PrincipalMenu implements IMenu {
         System.out.println("|__________________|");
         System.out.println("1: Manage Student");
         System.out.println("2: Manage subjects");
-        System.out.println("3: Exit program");
-        this.exitValue = "3"; //to exit from menu
+        System.out.println("3: Generate subject report");
+        System.out.println("4: Generate student report");
+        System.out.println("5: Exit program");
+        this.exitValue = "5"; //to exit from menu
         System.out.print("Enter your selection: ");
     }
 
@@ -22,7 +26,9 @@ public class PrincipalMenu implements IMenu {
         switch (optionSelected) {
             case "1" -> new MenuManager(new StudentMenu()).execute();
             case "2" -> new MenuManager(new SubjectMenu()).execute();
-            case "3" -> System.out.println("Leaving...");
+            case "3" -> new ReportOption(new SubjectTxtReport()).execute();
+            case "4" -> new ReportOption(new StudentTxtReport()).execute();
+            case "5" -> System.out.println("Leaving...");
             default -> System.out.println("\nInvalid input\n");
         }
     }
