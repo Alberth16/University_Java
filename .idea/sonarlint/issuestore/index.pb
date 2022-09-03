@@ -1,8 +1,6 @@
 
 [
 +src/main/java/org/example/utils/Screen.java,b/1/b181bfd923951f016181ff7cdb47068055beda75
-7
-pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
 c
 3src/main/java/org/example/config/IDBConnection.java,5/e/5e12d9f926fc407a890bcf5a8fcaa2414378b03c
 e
@@ -14,23 +12,13 @@ Y
 \
 ,src/main/java/org/example/model/Student.java,5/7/57db8914ffb929c37d238b0634d5722e0433bfff
 _
-/src/main/java/org/example/view/SubjectMenu.java,6/d/6d927f73fc1affb798e887819498b7a256dab8af
-_
-/src/main/java/org/example/view/StudentMenu.java,9/f/9f79d8c6f2cf5e9d347e103a9075ea7b0adec92e
-_
 /src/main/java/org/example/utils/Validation.java,6/4/64149b3c45d3fe41926452a3fb97c52433752d79
-a
-1src/main/java/org/example/view/StudentOption.java,4/9/4926ea4291c11ae0a4beefc1c4c6d9149c4c8ab7
 a
 1src/main/java/org/example/view/SubjectOption.java,7/0/70bb9a6f4a16aa7d6f9daad65c525307e1178c55
 J
 reports/report-subject.txt,4/f/4fd238e370ea347354d3fcf9f980ebe5af6e4e82
-`
-0src/main/java/org/example/view/ReportOption.java,d/7/d7e31f09d794cc4187291c9a6d13a63b736818bc
 _
 /src/main/java/org/example/utils/ActionType.java,4/6/460064def5acd62d7a8ecc4f17a329df862ab87c
-e
-5src/main/java/org/example/utils/StudentTxtReport.java,e/3/e385c3dc568c8546aa0d13fd80dcd5f188a8b549
 j
 :src/main/java/org/example/contoller/SubjectController.java,1/f/1f56b0ceba82443ab82d0ec7fc118a9a7c3e9298
 J

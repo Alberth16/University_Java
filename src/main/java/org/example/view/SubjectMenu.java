@@ -2,10 +2,11 @@ package org.example.view;
 
 import org.example.utils.ActionType;
 import org.example.view.interfaces.IMenu;
+import org.example.view.interfaces.IOption;
 
 public class SubjectMenu implements IMenu {
     private String exitValue;
-    private String option;
+    private String optionSelected;
     @Override
     public void showMenu() {
         System.out.println(".________________.");
@@ -21,18 +22,20 @@ public class SubjectMenu implements IMenu {
 
     @Override
     public void selectOption(String optionSelected) {
-        this.option = optionSelected;
+        IOption option;
+        this.optionSelected = optionSelected;
         switch (optionSelected) {
-            case "1" -> new SubjectOption(ActionType.GET_BY_ID).execute();
-            case "2" -> new SubjectOption(ActionType.GET).execute();
-            case "3" -> new SubjectOption(ActionType.SAVE).execute();
-            case "4" -> System.out.println();
-            default -> System.out.println("\nInvalid input\n");
+            case "1" -> option=new SubjectOption(ActionType.GET_BY_ID);
+            case "2" -> option= new SubjectOption(ActionType.GET);
+            case "3" -> option=new SubjectOption(ActionType.SAVE);
+            case "4" -> option = new MessageOption("");
+            default -> option = new MessageOption("\nInvalid input\n");
         }
+        option.execute();
     }
 
     @Override
     public boolean exit() {
-        return this.option.equals(this.exitValue);
+        return this.optionSelected.equals(this.exitValue);
     }
 }

@@ -1,11 +1,14 @@
 package org.example.view;
+
 import org.example.utils.StudentTxtReport;
 import org.example.utils.SubjectTxtReport;
 import org.example.view.interfaces.IMenu;
+import org.example.view.interfaces.IOption;
 
 public class PrincipalMenu implements IMenu {
     private String exitValue;
-    private String option;
+    private String optionSelected;
+
     @Override
     public void showMenu() {
         System.out.println(".__________________.");
@@ -22,19 +25,22 @@ public class PrincipalMenu implements IMenu {
 
     @Override
     public void selectOption(String optionSelected) {
-        this.option = optionSelected; //to validate if it should exit
+        this.optionSelected = optionSelected; //to validate if it should exit
+        IOption option;
         switch (optionSelected) {
-            case "1" -> new MenuManager(new StudentMenu()).execute();
-            case "2" -> new MenuManager(new SubjectMenu()).execute();
-            case "3" -> new ReportOption(new SubjectTxtReport()).execute();
-            case "4" -> new ReportOption(new StudentTxtReport()).execute();
-            case "5" -> System.out.println("Leaving...");
-            default -> System.out.println("\nInvalid input\n");
+            case "1" -> option = new MenuManager(new StudentMenu());
+            case "2" -> option = new MenuManager(new SubjectMenu());
+            case "3" -> option = new ReportOption(new SubjectTxtReport());
+            case "4" -> option = new ReportOption(new StudentTxtReport());
+            case "5" -> option = new MessageOption("Leaving...");
+            default -> option = new MessageOption("\nInvalid input\n");
         }
+
+        option.execute();
     }
 
     @Override
     public boolean exit() {
-        return this.option.equals(this.exitValue);
+        return this.optionSelected.equals(this.exitValue);
     }
 }
