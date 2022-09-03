@@ -30,7 +30,7 @@ public class StudentOption implements IOption {
     private void getStudentById(){
         System.out.print("Enter student ID: ");
         int id = Validation.validateParseInt(scanner.next());
-        this.studentController.getStudentById(id);
+        System.out.println(this.studentController.getStudentById(id));
     }
 
     @Override
@@ -42,6 +42,7 @@ public class StudentOption implements IOption {
                 this.studentController.getStudents();
             }
             case GET_BY_ID -> this.getStudentById();
+            default -> System.out.println("\nInvalid!\n");
         }
     }
 }

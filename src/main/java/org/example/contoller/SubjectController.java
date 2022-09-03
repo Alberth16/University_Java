@@ -9,24 +9,29 @@ import org.example.utils.Validation;
 public class SubjectController {
     private String line;
 
-    public void getSubjectById(int subjectId) {
+    public String getSubjectById(int subjectId) {
+        this.line = "--------------------------------------------------------------------------------------------------";
+        StringBuilder content = new StringBuilder();
+
         if (Validation.isValidSubjectId(subjectId)) {
-            this.line = "--------------------------------------------------------------------------------------------------";
-            System.out.println(this.line);
-            System.out.printf("%5s %15s %10s %20s %20s %10s%n", "ID", "SUBJECT", "ID", "NAME", "LASTNAME", "GRADE");
-            System.out.println(this.line);
-            System.out.println();
-            System.out.printf("%5s %15s%n", subjectId, SubjectType.values()[subjectId - 1]);
-            Data.students.forEach(st -> System.out.printf("%5s %15s %10s %20s %20s %5s %.2f%n", "", "", st.getUserId(), st.getName(), st.getLastName(), "", st.getSubjects().get(subjectId - 1).getGrade()));
-            System.out.println();
-            System.out.println(this.line);
-            System.out.printf("%25s %.2f", "AVERAGE GRADE:", this.getAverage(subjectId));
-            System.out.printf("%25s %.2f", "MINIMUM GRADE:", this.getMinGrade(subjectId));
-            System.out.printf("%25s %.2f%n", "MAXIMUM GRADE:", this.getMaxGrade(subjectId));
-            System.out.println(this.line);
+            content.append(this.line).append("\n");
+            content.append(String.format("%5s %15s %10s %20s %20s %10s%n", "ID", "SUBJECT", "ID", "NAME", "LASTNAME", "GRADE"));
+            content.append(this.line).append("\n");
+            content.append("\n");
+            content.append(String.format("%5s %15s%n", subjectId, SubjectType.values()[subjectId - 1]));
+            for(Student st: Data.students){
+                content.append(String.format("%5s %15s %10s %20s %20s %5s %.2f%n", "", "", st.getUserId(), st.getName(), st.getLastName(), "", st.getSubjects().get(subjectId - 1).getGrade()));
+            }
+            content.append("\n");
+            content.append(this.line).append("\n");
+            content.append(String.format("%25s %.2f", "AVERAGE GRADE:", this.getAverage(subjectId)));
+            content.append(String.format("%25s %.2f", "MINIMUM GRADE:", this.getMinGrade(subjectId)));
+            content.append(String.format("%25s %.2f%n", "MAXIMUM GRADE:", this.getMaxGrade(subjectId)));
+            content.append(this.line).append("\n");
         } else {
-            System.out.println("\nSubject not found\n");
+            content.append("\nSubject not found\n");
         }
+        return content.toString();
     }
 
     private float getAverage(int subjectId) {

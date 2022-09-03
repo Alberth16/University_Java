@@ -34,7 +34,7 @@ public class SubjectOption implements IOption {
     public void getSubjectById(){
         System.out.print("Enter subject ID: ");
         int id = Validation.validateParseInt(scanner.next());
-        this.subjectController.getSubjectById(id);
+        System.out.println(this.subjectController.getSubjectById(id));
     }
 
     @Override
@@ -43,6 +43,7 @@ public class SubjectOption implements IOption {
             case GET_BY_ID -> this.getSubjectById();
             case GET -> subjectController.getSubjects();
             case SAVE -> this.saveGrade();
+            default -> System.out.println("\nInvalid!\n");
         }
     }
 }
