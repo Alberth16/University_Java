@@ -9,8 +9,8 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
-.idea/sonarlint
-reports
+.idea/sonarlint/
+/reports/
 *.iws
 *.iml
 *.ipr
