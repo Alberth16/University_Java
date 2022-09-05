@@ -5,9 +5,9 @@
 ## Class diagram
 
 
-```bash
-Java
-```
+
+![School](https://user-images.githubusercontent.com/103908249/188343061-42d730c6-f7ca-47cd-9c5f-53023f047bdc.png)
+
 
 ## Usage
 Browse through each of the menus
