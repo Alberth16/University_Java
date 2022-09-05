@@ -5,8 +5,7 @@
 ## Class diagram
 
 
-
-![School](https://user-images.githubusercontent.com/103908249/188343061-42d730c6-f7ca-47cd-9c5f-53023f047bdc.png)
+![School (1)](https://user-images.githubusercontent.com/103908249/188344962-9cfd2ab0-8678-43b1-b20a-9eea9275e209.png)
 
 
 ## Usage
