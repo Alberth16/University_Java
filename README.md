@@ -5,8 +5,7 @@
 ## Class diagram
 
 
-![School (3)](https://user-images.githubusercontent.com/103908249/188346501-03128b15-4ea9-402e-bf32-a2715793f494.png)
-
+![School (4)](https://user-images.githubusercontent.com/103908249/188348000-b0448d71-ef34-40c1-951e-4c2e956b6331.png)
 
 ## Usage
 Browse through each of the menus

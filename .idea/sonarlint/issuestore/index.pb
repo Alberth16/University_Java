@@ -18,3 +18,17 @@ _
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
 e
 5src/main/java/org/example/utils/StudentTxtReport.java,e/3/e385c3dc568c8546aa0d13fd80dcd5f188a8b549
+j
+:src/main/java/org/example/contoller/SubjectController.java,1/f/1f56b0ceba82443ab82d0ec7fc118a9a7c3e9298
+\
+,src/main/java/org/example/model/Subject.java,a/6/a660786cab1364d156241adaf990667dc113ec33
+j
+:src/main/java/org/example/contoller/StudentController.java,d/d/dd59da79a3aeacffe4f3c2edda3bb4a2e5ae6768
+_
+/src/main/java/org/example/utils/ActionType.java,4/6/460064def5acd62d7a8ecc4f17a329df862ab87c
+`
+0src/main/java/org/example/utils/SubjectType.java,0/1/019625b60081acf796b6a0ddcee953803f0aa6a5
+Y
+)src/main/java/org/example/utils/Data.java,2/1/218e604163fdd40bdd0d2edc69d7f6b31d8815af
+\
+,src/main/java/org/example/model/Student.java,5/7/57db8914ffb929c37d238b0634d5722e0433bfff
