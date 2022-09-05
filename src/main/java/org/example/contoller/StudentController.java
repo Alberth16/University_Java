@@ -34,29 +34,6 @@ public class StudentController {
         Data.students.add(student);
     }
 
-    /*public void getStudentById(int studentId) {
-        this.line = "--------------------------------------------------------------------------------------------------------------------------------------";
-        StringBuilder content = new StringBuilder();
-
-        if (Validation.isValidStudentId(studentId)) {
-            Student st = Data.students.get(studentId - 1);
-            System.out.println(this.line);
-            System.out.printf("%5s %15s %15s %25s %10s %25s %10s%n", "ID", "NAME", "LASTNAME", "EMAIL", "ID", "SUBJECT", "GRADE");
-            System.out.println(this.line);
-            System.out.println("\n");
-            System.out.printf("%5s %15s %15s %25s%n", st.getUserId(), st.getName(), st.getLastName(), st.getEmail());
-            st.getSubjects().forEach(s -> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n", "", "", "", "", st.getSubjects().indexOf(s) + 1, s.getName(), "", s.getGrade()));
-            System.out.println("\n");
-            System.out.println(this.line);
-            System.out.printf("%20s %3s", "FAILED:", this.getFailedScores(studentId));
-            System.out.printf("%15s %3s", "APPROVED:", this.getApprovedScores(studentId));
-            System.out.printf("%25s %.2f", "LOWEST SCORE:", this.getLowestScore(studentId));
-            System.out.printf("%25s %.2f%n", "HIGHEST SCORE:", this.getHighestScore(studentId));
-            System.out.println(this.line);
-        } else {
-            System.out.println("\nStudent not found\n");
-        }
-    }*/
 
     public String getStudentById(int studentId) {
         this.line = "--------------------------------------------------------------------------------------------------------------------------------------";
@@ -69,8 +46,7 @@ public class StudentController {
             content.append(this.line).append("\n");
             content.append("\n");
             content.append(String.format("%5s %15s %15s %25s%n", st.getUserId(), st.getName(), st.getLastName(), st.getEmail()));
-            //st.getSubjects().forEach(s -> System.out.printf("%5s %15s %15s %25s %10s %25s %5s %.2f%n", "", "", "", "", st.getSubjects().indexOf(s) + 1, s.getName(), "", s.getGrade()));
-            for(Subject s: st.getSubjects()){
+            for (Subject s : st.getSubjects()) {
                 content.append(String.format("%5s %15s %15s %25s %10s %25s %5s %.2f%n", "", "", "", "", st.getSubjects().indexOf(s) + 1, s.getName(), "", s.getGrade()));
             }
             content.append("\n");
