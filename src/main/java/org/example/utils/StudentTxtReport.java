@@ -6,7 +6,7 @@ import org.example.utils.abstracts.Report;
 import java.util.Scanner;
 
 public class StudentTxtReport extends Report {
-    @Override
+//    @Override
     public String generate() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter student ID: ");
