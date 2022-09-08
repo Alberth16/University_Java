@@ -2,15 +2,15 @@
    ID            NAME        LASTNAME                     EMAIL         ID                   SUBJECT      GRADE
 --------------------------------------------------------------------------------------------------------------------------------------
 
-   11            qqqq              qq                 qqq@gdsfs
-                                                                         1                     MATHS       10.00
-                                                                         2                   ENGLISH       0.00
-                                                                         3                LITERATURE       0.00
-                                                                         4                 CHEMISTRY       0.00
-                                                                         5                   HISTORY       0.00
-                                                                         6                   PHYSICS       0.00
-                                                                         7                 GEOGRAPHY       0.00
+    2        Fernando          Acosta          test@yopmail.com
+                                                                         1                     MATHS       5.16
+                                                                         2                   ENGLISH       7.11
+                                                                         3                LITERATURE       5.01
+                                                                         4                 CHEMISTRY       9.47
+                                                                         5                   HISTORY       4.79
+                                                                         6                   PHYSICS       9.15
+                                                                         7                 GEOGRAPHY       5.54
 
 --------------------------------------------------------------------------------------------------------------------------------------
-             FAILED:   6      APPROVED:   1            LOWEST SCORE: 0.00           HIGHEST SCORE: 10.00
+             FAILED:   4      APPROVED:   3            LOWEST SCORE: 4.79           HIGHEST SCORE: 9.47
 --------------------------------------------------------------------------------------------------------------------------------------

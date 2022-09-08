@@ -1,5 +1,6 @@
 package org.example.contoller;
 
+import lombok.extern.java.Log;
 import org.example.model.Student;
 import org.example.model.Subject;
 import org.example.utils.Data;
@@ -9,6 +10,7 @@ import org.example.utils.Validation;
 import java.util.ArrayList;
 import java.util.List;
 
+@Log
 public class StudentController {
     private String line;
 
@@ -32,6 +34,8 @@ public class StudentController {
 
         student.setSubjects(subjects);
         Data.students.add(student);
+        log.info("\u001B[32m Successful  \u001B[0m");
+
     }
 
 
@@ -42,6 +46,7 @@ public class StudentController {
         if (Validation.isValidStudentId(studentId)) {
             Student st = Data.students.get(studentId - 1);
             content.append(this.line).append("\n");
+            log.info("\u001B[32m Successful  \u001B[0m");
             content.append(String.format("%5s %15s %15s %25s %10s %25s %10s%n", "ID", "NAME", "LASTNAME", "EMAIL", "ID", "SUBJECT", "GRADE"));
             content.append(this.line).append("\n");
             content.append("\n");
@@ -58,7 +63,8 @@ public class StudentController {
             content.append(this.line).append("\n");
 
         } else {
-            content.append("\nStudent not found\n");
+            content.append(this.line);
+            log.info("Student not found");
         }
 
         return content.toString();

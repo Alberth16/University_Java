@@ -1,10 +1,12 @@
 package org.example.view;
 
+import lombok.extern.java.Log;
 import org.example.utils.StudentTxtReport;
 import org.example.utils.SubjectTxtReport;
 import org.example.view.interfaces.IMenu;
 import org.example.view.interfaces.IOption;
 
+@Log
 public class PrincipalMenu implements IMenu {
     private String exitValue;
     private String optionSelected;
@@ -33,7 +35,10 @@ public class PrincipalMenu implements IMenu {
             case "3" -> option = new ReportOption(new SubjectTxtReport());
             case "4" -> option = new ReportOption(new StudentTxtReport());
             case "5" -> option = new MessageOption("Leaving...");
-            default -> option = new MessageOption("\nInvalid input\n");
+            default -> {
+                option = new MessageOption("\n.\n");
+                log.info("Invalid input");
+            }
         }
 
         option.execute();

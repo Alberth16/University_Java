@@ -3,18 +3,17 @@
 --------------------------------------------------------------------------------------------------
 
     1           MATHS
-                               1                 Hugo               Vernal       9.49
-                               2             Fernando               Acosta       4.79
-                               3               Sandra                Smith       7.01
-                               4              Ricardo                Tylor       8.13
-                               5               Ingrid                Jones       4.73
-                               6               Moises             Williams       6.18
-                               7               Israel                Brown       5.77
-                               8                James                Brown       8.75
-                               9               Samuel              Cabrera       5.93
-                              10                Elias               Campos       4.01
-                              11                 qqqq                   qq       10.00
+                               1                 Hugo               Vernal       7.92
+                               2             Fernando               Acosta       5.16
+                               3               Sandra                Smith       4.02
+                               4              Ricardo                Tylor       8.08
+                               5               Ingrid                Jones       8.84
+                               6               Moises             Williams       8.54
+                               7               Israel                Brown       6.21
+                               8                James                Brown       5.19
+                               9               Samuel              Cabrera       9.07
+                              10                Elias               Campos       4.61
 
 --------------------------------------------------------------------------------------------------
-           AVERAGE GRADE: 6.80           MINIMUM GRADE: 4.01           MAXIMUM GRADE: 10.00
+           AVERAGE GRADE: 6.76           MINIMUM GRADE: 4.02           MAXIMUM GRADE: 9.07
 --------------------------------------------------------------------------------------------------

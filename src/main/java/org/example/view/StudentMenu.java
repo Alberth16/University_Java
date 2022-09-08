@@ -1,9 +1,11 @@
 package org.example.view;
 
+import lombok.extern.java.Log;
 import org.example.utils.ActionType;
 import org.example.view.interfaces.IMenu;
 import org.example.view.interfaces.IOption;
 
+@Log
 public class StudentMenu implements IMenu {
     private String exitValue;
     private String optionSelected;
@@ -30,7 +32,10 @@ public class StudentMenu implements IMenu {
             case "2" -> option = new StudentOption(ActionType.SAVE);
             case "3" -> option = new StudentOption(ActionType.GET_BY_ID);
             case "4" -> option = new MessageOption("");
-            default -> option = new MessageOption("\nInvalid input\n");
+            default -> {
+                option = new MessageOption("\n*********\n");
+                log.info("Invalid option");
+            }
         }
 
         option.execute();

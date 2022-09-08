@@ -1,5 +1,6 @@
 package org.example.view;
 
+import lombok.extern.java.Log;
 import org.example.contoller.SubjectController;
 import org.example.utils.ActionType;
 import org.example.utils.Validation;
@@ -7,6 +8,7 @@ import org.example.view.interfaces.IOption;
 
 import java.util.Scanner;
 
+@Log
 public class SubjectOption implements IOption {
     private final SubjectController subjectController = new SubjectController();
     Scanner scanner = new Scanner(System.in);
@@ -25,13 +27,13 @@ public class SubjectOption implements IOption {
         int subjectId = Validation.validateParseInt(scanner.next());
 
         if (newGrade > 10 || newGrade < 0) {
-            System.out.println("\nGrade invalid!\n");
+            log.info("Grade invalid!");
         } else {
             this.subjectController.saveGrade(studentId, subjectId, newGrade);
         }
     }
 
-    public void getSubjectById(){
+    public void getSubjectById() {
         System.out.print("Enter subject ID: ");
         int id = Validation.validateParseInt(scanner.next());
         System.out.println(this.subjectController.getSubjectById(id));

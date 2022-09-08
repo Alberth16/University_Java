@@ -1,11 +1,13 @@
 package org.example.contoller;
 
+import lombok.extern.java.Log;
 import org.example.model.Student;
 import org.example.model.Subject;
 import org.example.utils.Data;
 import org.example.utils.SubjectType;
 import org.example.utils.Validation;
 
+@Log
 public class SubjectController {
     private String line;
 
@@ -19,7 +21,7 @@ public class SubjectController {
             content.append(this.line).append("\n");
             content.append("\n");
             content.append(String.format("%5s %15s%n", subjectId, SubjectType.values()[subjectId - 1]));
-            for(Student st: Data.students){
+            for (Student st : Data.students) {
                 content.append(String.format("%5s %15s %10s %20s %20s %5s %.2f%n", "", "", st.getUserId(), st.getName(), st.getLastName(), "", st.getSubjects().get(subjectId - 1).getGrade()));
             }
             content.append("\n");
@@ -29,7 +31,8 @@ public class SubjectController {
             content.append(String.format("%25s %.2f%n", "MAXIMUM GRADE:", this.getMaxGrade(subjectId)));
             content.append(this.line).append("\n");
         } else {
-            content.append("\nSubject not found\n");
+            content.append(this.line);
+            log.info("Subject not found");
         }
         return content.toString();
     }
@@ -93,7 +96,8 @@ public class SubjectController {
             System.out.println(this.line);
 
         } else {
-            System.out.println("\nSubject not found\n");
+            System.out.println(this.line);
+            log.info("Subject not found");
         }
     }
 }
