@@ -7,6 +7,10 @@
 
 ![School (4)](https://user-images.githubusercontent.com/103908249/188348000-b0448d71-ef34-40c1-951e-4c2e956b6331.png)
 
+
+## Class diagram update
+![Composite Diagram](https://user-images.githubusercontent.com/103908249/189178222-501e81a8-9795-468d-8bf6-99628e73c97a.png)
+
 ## Usage
 Browse through each of the menus
 

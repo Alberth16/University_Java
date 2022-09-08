@@ -24,8 +24,6 @@ d
 4src/main/java/org/example/view/interfaces/IMenu.java,c/6/c66709355b1ecde0b3753bbd9551fd3d56c1fa43
 J
 reports/report-student.txt,7/f/7f153ed221ff641ad8ff6487b1eca30b92089065
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 S
 #src/main/java/org/example/Main.java,0/b/0ba1b9c7a4878802f938e331cc2d8a042087ec6b
 _
