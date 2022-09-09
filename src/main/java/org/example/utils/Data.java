@@ -15,7 +15,7 @@ public class Data {
     public static final List<Student> students = new ArrayList<>();
     private static final Random random = new Random();
 
-    private Data() {
+    public Data() {
     }
 
     public static void insertStudentData() {
