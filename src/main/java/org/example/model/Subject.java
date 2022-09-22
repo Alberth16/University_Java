@@ -1,19 +1,11 @@
 package org.example.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Subject {
-
-    private final String name;
+    private String name;
     private float grade;
-
-    public Subject(String name, float grade) {
-        this.name = name;
-        this.grade = grade;
-    }
-
 }
