@@ -16,8 +16,6 @@ _
 0src/main/java/org/example/utils/SubjectType.java,0/1/019625b60081acf796b6a0ddcee953803f0aa6a5
 Y
 )src/main/java/org/example/utils/Data.java,2/1/218e604163fdd40bdd0d2edc69d7f6b31d8815af
-\
-,src/main/java/org/example/model/Student.java,5/7/57db8914ffb929c37d238b0634d5722e0433bfff
 f
 6src/main/java/org/example/view/interfaces/IOption.java,0/5/05a7ae83202d3bcc5b07a36aeb0e2951f70388f4
 d
