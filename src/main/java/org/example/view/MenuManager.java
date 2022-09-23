@@ -1,14 +1,17 @@
 package org.example.view;
+
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.example.utils.Screen;
 import org.example.view.interfaces.IOption;
 import org.example.view.interfaces.IMenu;
+
 import java.util.Scanner;
 
+@NoArgsConstructor
+@AllArgsConstructor
 public class MenuManager implements IOption {
-    private final IMenu menu;
-    public MenuManager(IMenu menu){
-        this.menu = menu;
-    }
+    private IMenu menu;
 
     @Override
     public void execute() {

@@ -16,15 +16,15 @@ public class StudentOption implements IOption {
     }
 
     private void saveStudent(){
+        Student student = new Student();
         System.out.println("Enter a new Student");
         System.out.print("Name: ");
-        String name = scanner.next();
+        student.setName(scanner.next());
         System.out.print("LastName: ");
-        String lastName = scanner.next();
+        student.setLastName(scanner.next());
         System.out.print("email: ");
-        String email = scanner.next();
-
-        this.studentController.saveStudent(new Student(name, lastName, email));
+        student.setEmail(scanner.next());
+        this.studentController.saveStudent(student);
     }
 
     private void getStudentById(){
